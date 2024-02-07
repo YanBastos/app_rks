@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable */ 
 export interface AppointmentProps {
   customer: string
   startAt: Date
@@ -6,7 +6,6 @@ export interface AppointmentProps {
 }
 
 export class Appointment {
-  // eslint-disable-next-line @typescript-eslint/prefer-readonly
   private props!: AppointmentProps
 
   get customer () {
@@ -19,5 +18,9 @@ export class Appointment {
 
   get endsAt () {
     return this.props.endsAt
+  }
+
+  constructor (props: AppointmentProps) {
+    this.props = props
   }
 }
