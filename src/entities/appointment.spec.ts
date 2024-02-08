@@ -4,6 +4,9 @@ import { Appointment } from './appointment'
 
 
 test('create an appointment'), () => {
+    const startAt = new Date()
+    const endsAt = new Date()
+
     const appointment = new Appointment({
         customer: 'Jhon Doe',
         startAt: new Date(),
