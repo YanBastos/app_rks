@@ -12,7 +12,18 @@ interface CreateAppointmentReq {
 type CreateAppointmentRes = Appointment
 
 export class CreateAppointment {
-    async execute(req: CreateAppointmentReq): Promise<CreateAppointmentRes> {
+    async execute({
+        customer,
+        startsAt,
+        endsAt
+    }: CreateAppointmentReq): Promise<CreateAppointmentRes> {
+        const appointment = new Appointment({
+            customer,
+            startsAt,
+            endsAt
+        })
+
+        return appointment
 
     }
 }

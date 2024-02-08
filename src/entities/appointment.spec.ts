@@ -4,12 +4,12 @@ import { Appointment } from './appointment'
 
 
 test('create an appointment'), () => {
-    const startAt = new Date()
+    const startsAt = new Date()
     const endsAt = new Date()
 
     const appointment = new Appointment({
         customer: 'Jhon Doe',
-        startAt: new Date(),
+        startsAt: new Date(),
         endsAt: new Date()
     })
 
@@ -18,7 +18,7 @@ test('create an appointment'), () => {
 }
 
 test('cannot create an appointement with end date before start dae', () => {
-    const startAt = new Date()
+    const startsAt = new Date()
     const endsAt = new Date()
 
     endsAt.setDate(endsAt.getDate() - 1) //take date one day before
@@ -26,7 +26,7 @@ test('cannot create an appointement with end date before start dae', () => {
     expect(() => {
         return new Appointment({
             customer: 'Jhon Doe',
-            startAt,
+            startsAt,
             endsAt
         })
     }).toThrow

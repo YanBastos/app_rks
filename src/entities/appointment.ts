@@ -1,7 +1,7 @@
 /* eslint-disable */ 
 export interface AppointmentProps {
   customer: string
-  startAt: Date
+  startsAt: Date
   endsAt: Date
 }
 
@@ -13,7 +13,7 @@ export class Appointment {
   }
 
   get startAt () {
-    return this.props.startAt
+    return this.props.startsAt
   }
 
   get endsAt () {
@@ -22,9 +22,9 @@ export class Appointment {
 
   constructor (props: AppointmentProps) {
     
-    const {startAt, endsAt}= props
+    const {startsAt, endsAt}= props
     
-    if(endsAt <= startAt ){
+    if(endsAt <= startsAt ){
       throw new Error('Invalid date')
       
     }
