@@ -13,3 +13,19 @@ test('create an appointment'), () => {
     expect(appointment).toBeInstanceOf(Appointment)
     expect(appointment.customer).toEqual('Jhon Doe')
 }
+
+test('cannot create an appointement with end date before start dae', () => {
+    const startAt = new Date()
+    const endsAt = new Date()
+
+    endsAt.setDate(endsAt.getDate() - 1) //take date one day before
+
+    expect(() => {
+        return new Appointment({
+            customer: 'Jhon Doe',
+            startAt,
+            endsAt
+        })
+    }).toThrow
+
+})
