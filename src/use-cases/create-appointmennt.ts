@@ -12,6 +12,9 @@ interface CreateAppointmentReq {
 type CreateAppointmentRes = Appointment
 
 export class CreateAppointment {
+    static execute(arg0: { customer: string; startsAt: Date; endsDate: Date }): any {
+        throw new Error("Method not implemented.")
+    }
     async execute({
         customer,
         startsAt,
