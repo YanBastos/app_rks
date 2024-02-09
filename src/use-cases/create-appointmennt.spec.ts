@@ -15,8 +15,8 @@ describe('create appointment', () => {
 
         expect(CreateAppointment.execute({
             customer: 'Jhon Doe',
-            startsAt: new Date(),
-            endsDate: new Date(),
+            startsAt,
+            endsAt,
         })).resolves.toBeInstanceOf(Appointment)
     })
 })
